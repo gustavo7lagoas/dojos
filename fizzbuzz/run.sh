@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 for test_file in *test*.rb
   do
     ruby $test_file
