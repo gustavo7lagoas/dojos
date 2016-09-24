@@ -1,4 +1,4 @@
-require './parking_lot'
+require './estacionamento/parking_lot'
 require 'test/unit'
 
 class TestEstacionamento < Test::Unit::TestCase
