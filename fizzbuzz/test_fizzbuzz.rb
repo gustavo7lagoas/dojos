@@ -1,4 +1,4 @@
-require './fizzbuzz'
+require './fizzbuzz/fizzbuzz'
 require 'test/unit'
 
 class TestHiker < Test::Unit::TestCase

@@ -21,10 +21,8 @@ is_multiple_of = proc { | base, num | num % base == 0 }
 
 def is_multiple_of_3?(number)
   number % 3 == 0
-  is_multiple_of.call(3, number)
 end
 
 def is_multiple_of_5?(number)
   number % 5 == 0
-  is_multiple_of.call(5, number)
 end
