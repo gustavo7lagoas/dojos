@@ -15,7 +15,7 @@
 class ParkingLot
 
     def vacancies
-        @vacancies 
+        @vacancies
     end
 
     def car_list
@@ -23,26 +23,36 @@ class ParkingLot
     end
 
     def initialize(vacancies)
-        @vacancies = 500
-        @car_list = Array.new()
+        @car_list = Array.new(vacancies)
+        @vacancies = @car_list.length
     end
 
     def arrive_car(a_car)
     	#@vacancies = @vacancies -1
-    	@vacancies -= 1
+        unless is_car_in_parking_lot(a_car) then
+            @car_list.push(a_car)
+            @vacancies -= 1
+        else
+            raise DuplicatedCarException
+        end
     end
 
     def leave_car(a_car)
+        # @car_list.remove(a_car)
     	@vacancies += 1
     end
 
     def is_car_in_parking_lot(a_car)
-    	return true
+        if @car_list.include?(a_car) then
+            return true
+        else
+            return false
+        end
     end
 
 end
 
-class DuplicatedCarException < RuntimeError
+class DuplicatedCarException < StandardError
 end
 
 
