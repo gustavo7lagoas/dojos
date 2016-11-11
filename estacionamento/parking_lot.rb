@@ -29,13 +29,12 @@ class ParkingLot
 
     def arrive_car(a_car)
     	#@vacancies = @vacancies -1
-        unless is_car_in_parking_lot(a_car) then
-            @car_list.push(a_car)
-            @vacancies -= 1
-        else
-            raise DuplicatedCarException
+        if is_car_in_parking_lot(a_car) then
+          raise DuplicatedCarException
         end
-    end
+          @car_list.push(a_car)
+            @vacancies -= 1
+     end
 
     def leave_car(a_car)
         # @car_list.remove(a_car)
